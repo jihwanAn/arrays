@@ -55,5 +55,18 @@ storedResults.push(9, 11);
 console.log(testResults, storedResults);
 console.log(storedResults.indexOf(2.2));
 
-const personData = [{ name: "A", name: "B" }];
+const personData = [{ name: "A" }, { name: "B" }];
 console.log(personData.indexOf({ name: "B" })); //객체가 있으면 실행되지 않음
+
+const B = personData.find((person, idx, persons) => {
+  return person.name === "B";
+});
+
+B.name = "DO";
+// 동일한 객체의 동일한 참조 값이므로 find()는 복사를 생성하지 않음
+console.log(B, personData);
+
+const maxIndex = personData.findIndex((person, idx, persons) => {
+  return person.name === "A";
+}); // 해당 항목의 인덱스를 반환하는 것이 차이점
+console.log(maxIndex);
