@@ -53,7 +53,10 @@ const storedResults = testResults.concat([21, 1.1]); // push와는 다른 새로
 storedResults.push(9, 11);
 
 console.log(testResults, storedResults);
-console.log(storedResults.indexOf(2.2));
+console.log(storedResults.indexOf(2.2)); // 찾지 못한 경우 -1반환
+
+console.log("in", testResults.includes(3.3)); // 배열의 일부인지 true/false
+console.log("in", testResults.indexOf(3.3) !== -1);
 
 const personData = [{ name: "A" }, { name: "B" }];
 console.log(personData.indexOf({ name: "B" })); //객체가 있으면 실행되지 않음
