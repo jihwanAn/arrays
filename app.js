@@ -40,3 +40,8 @@ console.log(hobbies);
 hobbies[1] = "Coding";
 // hobbies[5] = "Reading";
 console.log(hobbies, hobbies[5]);
+
+hobbies.splice(0, 0, "Good Food"); //실제 배열에서만 사용 (이터러블, 배열 같은 객체 안됨)
+console.log(hobbies);
+const removedElement = hobbies.splice(0, 1);
+console.log(removedElement);
