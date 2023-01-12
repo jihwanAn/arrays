@@ -29,19 +29,26 @@
 
 // console.log(typeof personalData[0]);
 
-const hobbies = ["Sports", "Cooking"];
-hobbies.push("Reading"); // 새 요소 추가
-hobbies.unshift("Coding"); // 첫 부분에 추가
-const poppedValue = hobbies.pop(); //마지막 요소 삭제
-console.log(poppedValue); // 위 삭제 요소 반환
-hobbies.shift(); // 첫 요소 삭제
-console.log(hobbies);
+// const hobbies = ["Sports", "Cooking"];
+// hobbies.push("Reading"); // 새 요소 추가
+// hobbies.unshift("Coding"); // 첫 부분에 추가
+// const poppedValue = hobbies.pop(); //마지막 요소 삭제
+// console.log(poppedValue); // 위 삭제 요소 반환
+// hobbies.shift(); // 첫 요소 삭제
+// console.log(hobbies);
 
-hobbies[1] = "Coding";
-// hobbies[5] = "Reading";
-console.log(hobbies, hobbies[5]);
+// hobbies[1] = "Coding";
+// // hobbies[5] = "Reading";
+// console.log(hobbies, hobbies[5]);
 
-hobbies.splice(0, 0, "Good Food"); //실제 배열에서만 사용 (이터러블, 배열 같은 객체 안됨)
-console.log(hobbies);
-const removedElement = hobbies.splice(0, 1);
-console.log(removedElement);
+// hobbies.splice(0, 0, "Good Food"); //실제 배열에서만 사용 (이터러블, 배열 같은 객체 안됨)
+// console.log(hobbies);
+// const removedElement = hobbies.splice(0, 1);
+// console.log(removedElement);
+
+const testResults = [1, 2.2, 3.3, 4.4, -5, 10];
+const storedResults = testResults.slice(0, 4); // 배열을 복사, 새 주소를 가짐
+
+storedResults.push(9, 11);
+
+console.log(testResults, storedResults);
