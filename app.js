@@ -47,7 +47,8 @@
 // console.log(removedElement);
 
 const testResults = [1, 2.2, 3.3, 4.4, -5, 10];
-const storedResults = testResults.slice(0, 4); // 배열을 복사, 새 주소를 가짐
+// const storedResults = testResults.slice(0, 4); // 배열을 복사, 새 주소를 가짐
+const storedResults = testResults.concat([21, 1.1]); // push와는 다른 새로운 배열을 반환.
 
 storedResults.push(9, 11);
 
