@@ -46,30 +46,46 @@
 // const removedElement = hobbies.splice(0, 1);
 // console.log(removedElement);
 
-const testResults = [1, 2.2, 3.3, 4.4, -5, 10];
-// const storedResults = testResults.slice(0, 4); // 배열을 복사, 새 주소를 가짐
-const storedResults = testResults.concat([21, 1.1]); // push와는 다른 새로운 배열을 반환.
+// const testResults = [1, 2.2, 3.3, 4.4, -5, 10];
+// // const storedResults = testResults.slice(0, 4); // 배열을 복사, 새 주소를 가짐
+// const storedResults = testResults.concat([21, 1.1]); // push와는 다른 새로운 배열을 반환.
 
-storedResults.push(9, 11);
+// storedResults.push(9, 11);
 
-console.log(testResults, storedResults);
-console.log(storedResults.indexOf(2.2)); // 찾지 못한 경우 -1반환
+// console.log(testResults, storedResults);
+// console.log(storedResults.indexOf(2.2)); // 찾지 못한 경우 -1반환
 
-console.log("in", testResults.includes(3.3)); // 배열의 일부인지 true/false
-console.log("in", testResults.indexOf(3.3) !== -1);
+// console.log("in", testResults.includes(3.3)); // 배열의 일부인지 true/false
+// console.log("in", testResults.indexOf(3.3) !== -1);
 
-const personData = [{ name: "A" }, { name: "B" }];
-console.log(personData.indexOf({ name: "B" })); //객체가 있으면 실행되지 않음
+// const personData = [{ name: "A" }, { name: "B" }];
+// console.log(personData.indexOf({ name: "B" })); //객체가 있으면 실행되지 않음
 
-const B = personData.find((person, idx, persons) => {
-  return person.name === "B";
+// const B = personData.find((person, idx, persons) => {
+//   return person.name === "B";
+// });
+
+// B.name = "DO";
+// // 동일한 객체의 동일한 참조 값이므로 find()는 복사를 생성하지 않음
+// console.log(B, personData);
+
+// const maxIndex = personData.findIndex((person, idx, persons) => {
+//   return person.name === "A";
+// }); // 해당 항목의 인덱스를 반환하는 것이 차이점
+// console.log(maxIndex);
+
+const prices = [10.99, 5.99, 3.99, 9.99];
+const tax = 0.99;
+const taxAdjustedPrices = [];
+
+// for (const price of prices) {
+//   taxAdjustedPrices.push(price * (1 + tax));
+// }
+
+//for 반복문 대안
+prices.forEach((price, idx, prices) => {
+  const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
+  taxAdjustedPrices.push(priceObj);
 });
 
-B.name = "DO";
-// 동일한 객체의 동일한 참조 값이므로 find()는 복사를 생성하지 않음
-console.log(B, personData);
-
-const maxIndex = personData.findIndex((person, idx, persons) => {
-  return person.name === "A";
-}); // 해당 항목의 인덱스를 반환하는 것이 차이점
-console.log(maxIndex);
+console.log(taxAdjustedPrices);
