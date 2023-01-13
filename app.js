@@ -98,11 +98,16 @@ const taxtAdjustedPrices = prices.map((price, idx, prices) => {
   return priceObj;
 });
 
-console.log(prices, taxtAdjustedPrices);
+// console.log(prices, taxtAdjustedPrices);
 
-const test = prices.map((ele, idx, prices) => {
-  const testObj = { index: idx, price: ele * (idx + 1) };
-  return testObj;
+const sortedPrices = prices.sort((a, b) => {
+  if (a > b) {
+    return -1;
+  } else if (a === b) {
+    return 0;
+  } else {
+    return 1;
+  }
 });
-
-console.log(test);
+// console.log(sortedPrices.reverse());
+console.log(sortedPrices);
