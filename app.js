@@ -90,73 +90,78 @@
 
 // console.log(taxAdjustedPrices);
 
-const prices = [10.99, 5.99, 3.99, 9.99];
-const tax = 0.99;
+// const prices = [10.99, 5.99, 3.99, 9.99];
+// const tax = 0.99;
 
-const taxtAdjustedPrices = prices.map((price, idx, prices) => {
-  const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
-  return priceObj;
-});
-
-// console.log(prices, taxtAdjustedPrices);
-
-const sortedPrices = prices.sort((a, b) => {
-  if (a > b) {
-    return -1;
-  } else if (a === b) {
-    return 0;
-  } else {
-    return 1;
-  }
-});
-// console.log(sortedPrices.reverse());
-console.log(sortedPrices);
-
-//filter(), 가격이 6보다 큰
-const filteredArray = prices.filter((price) => 6 < price);
-
-console.log(filteredArray);
-
-// let sum = 0;
-// prices.forEach((price) => {
-//   sum += price;
+// const taxtAdjustedPrices = prices.map((price, idx, prices) => {
+//   const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
+//   return priceObj;
 // });
 
-// console.log(sum);
+// // console.log(prices, taxtAdjustedPrices);
 
-//배열의 값을 단일값으로 할때 유용
-const sum = prices.reduce(
-  (prevValue, curValue, curIndex, prices) => prevValue + curValue,
-  0
-);
+// const sortedPrices = prices.sort((a, b) => {
+//   if (a > b) {
+//     return -1;
+//   } else if (a === b) {
+//     return 0;
+//   } else {
+//     return 1;
+//   }
+// });
+// // console.log(sortedPrices.reverse());
+// console.log(sortedPrices);
 
-console.log("sum", sum);
+// //filter(), 가격이 6보다 큰
+// const filteredArray = prices.filter((price) => 6 < price);
 
-const data = "new york;10.99;3000";
+// console.log(filteredArray);
 
-const transformedData = data.split(";");
-transformedData[1] = +transformedData[1];
-console.log(transformedData);
+// // let sum = 0;
+// // prices.forEach((price) => {
+// //   sum += price;
+// // });
 
-const nameFragmenets = ["Mr", "Kaki"];
-const name = nameFragmenets.join(".");
-console.log("Hello", name);
+// // console.log(sum);
 
-const copiedNameFragments = [...nameFragmenets]; //전개 구문
-nameFragmenets.push("42");
-console.log(nameFragmenets, copiedNameFragments);
+// //배열의 값을 단일값으로 할때 유용
+// const sum = prices.reduce(
+//   (prevValue, curValue, curIndex, prices) => prevValue + curValue,
+//   0
+// );
 
-console.log(Math.min(...prices));
+// console.log("sum", sum);
 
-const persons = [
-  { name: "Max", age: 30 },
-  { name: "Nana", age: 31 },
-];
-const copiedPersons = [
-  ...persons.map((person) => ({ name: person.name, age: person.age })),
-];
+// const data = "new york;10.99;3000";
 
-persons.push({ name: "Kaka", age: 73 });
-persons[2].age = 99;
+// const transformedData = data.split(";");
+// transformedData[1] = +transformedData[1];
+// console.log(transformedData);
 
-console.log(persons, copiedPersons);
+// const nameFragmenets = ["Mr", "Kaki"];
+// const name = nameFragmenets.join(".");
+// console.log("Hello", name);
+
+// const copiedNameFragments = [...nameFragmenets]; //전개 구문
+// nameFragmenets.push("42");
+// console.log(nameFragmenets, copiedNameFragments);
+
+// console.log(Math.min(...prices));
+
+// const persons = [
+//   { name: "Max", age: 30 },
+//   { name: "Nana", age: 31 },
+// ];
+// const copiedPersons = [
+//   ...persons.map((person) => ({ name: person.name, age: person.age })),
+// ];
+
+// persons.push({ name: "Kaka", age: 73 });
+// persons[2].age = 99;
+
+// console.log(persons, copiedPersons);
+
+const nameData = ["Kim", "minjae", "Kor", 26];
+
+const [firstName, lastName, ...otherInfo] = nameData;
+console.log(firstName, lastName, otherInfo);
