@@ -41,3 +41,18 @@
  ** 초당 여러번 키-값 쌍을 추가, 삭제 하는 작업을 할때 좋음
  ** Set, Map은 배열 객체보다 드물게 사용
  */
+
+let person = { name: "Max" };
+const persons = new WeakSet(); // 숫자나 문자열은 저장 x
+persons.add(person);
+
+// ... some operations
+person = null;
+
+console.log(persons);
+
+/**
+ ** Set의 경우 불필요한 데이터가 메모리에 남음
+ ** WeakSet() -> 객체를 지정해 놓은 모든 위치를 리셋했다면 더 이상 Set도 해당 객체를 저장해 두지 않고 삭제
+ ** WeakSet은 가비지 컬렉션으로 Set에 포함되어 있는 항목을 직접 삭제. 더 이상 코드 일부로 남지않음
+ */
