@@ -74,18 +74,35 @@
 // }); // 해당 항목의 인덱스를 반환하는 것이 차이점
 // console.log(maxIndex);
 
+// const prices = [10.99, 5.99, 3.99, 9.99];
+// const tax = 0.99;
+// const taxAdjustedPrices = [];
+
+// // for (const price of prices) {
+// //   taxAdjustedPrices.push(price * (1 + tax));
+// // }
+
+// //for 반복문 대안
+// prices.forEach((price, idx, prices) => {
+//   const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
+//   taxAdjustedPrices.push(priceObj);
+// });
+
+// console.log(taxAdjustedPrices);
+
 const prices = [10.99, 5.99, 3.99, 9.99];
 const tax = 0.99;
-const taxAdjustedPrices = [];
 
-// for (const price of prices) {
-//   taxAdjustedPrices.push(price * (1 + tax));
-// }
-
-//for 반복문 대안
-prices.forEach((price, idx, prices) => {
+const taxtAdjustedPrices = prices.map((price, idx, prices) => {
   const priceObj = { index: idx, taxAdjPrice: price * (1 + tax) };
-  taxAdjustedPrices.push(priceObj);
+  return priceObj;
 });
 
-console.log(taxAdjustedPrices);
+console.log(prices, taxtAdjustedPrices);
+
+const test = prices.map((ele, idx, prices) => {
+  const testObj = { index: idx, price: ele * (idx + 1) };
+  return testObj;
+});
+
+console.log(test);
