@@ -138,6 +138,25 @@ const transformedData = data.split(";");
 transformedData[1] = +transformedData[1];
 console.log(transformedData);
 
-const nameFragemenets = ["Mr", "Kaki"];
-const name = nameFragemenets.join(".");
+const nameFragmenets = ["Mr", "Kaki"];
+const name = nameFragmenets.join(".");
 console.log("Hello", name);
+
+const copiedNameFragments = [...nameFragmenets]; //전개 구문
+nameFragmenets.push("42");
+console.log(nameFragmenets, copiedNameFragments);
+
+console.log(Math.min(...prices));
+
+const persons = [
+  { name: "Max", age: 30 },
+  { name: "Nana", age: 31 },
+];
+const copiedPersons = [
+  ...persons.map((person) => ({ name: person.name, age: person.age })),
+];
+
+persons.push({ name: "Kaka", age: 73 });
+persons[2].age = 99;
+
+console.log(persons, copiedPersons);
