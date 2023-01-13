@@ -125,21 +125,19 @@ console.log(filteredArray);
 // console.log(sum);
 
 //배열의 값을 단일값으로 할때 유용
-// const sum = prices.reduce((prevValue, curValue, curIndex, prices) => {
-//   return prevValue + curValue;
-// }, 0);
-// console.log("sum", sum);
+const sum = prices.reduce(
+  (prevValue, curValue, curIndex, prices) => prevValue + curValue,
+  0
+);
 
-const originalArray = [{ price: 10.99 }, { price: 5.99 }, { price: 29.99 }];
-// const transformedArray = originalArray.map((obj) => obj.price);
-// produces [10.99, 5.99, 29.99]
-// const sum = transformedArray.reduce((sumVal, curVal) => sumVal + curVal, 0);
+console.log("sum", sum);
 
-// const sum = originalArray.reduce((sumVal, curVal) => sumVal + curVal.price, 0);
+const data = "new york;10.99;3000";
 
-//메서드 체인, map() 의 결과에서 직접 .reduce() 를 호출
-const sum = originalArray
-  .map((obj) => obj.price)
-  .reduce((sumVal, curVal) => sumVal + curVal, 0);
+const transformedData = data.split(";");
+transformedData[1] = +transformedData[1];
+console.log(transformedData);
 
-console.log(sum);
+const nameFragemenets = ["Mr", "Kaki"];
+const name = nameFragemenets.join(".");
+console.log("Hello", name);
