@@ -33,6 +33,8 @@
 //   console.log(value);
 // }
 
+let person = { name: "Max" };
+
 /**
  ** Maps (객체나 배열도 키로 가짐) 객체보다 유연성이 좋음
  ** 정말 큰 데이터(데이터 양 많음)라면 객체보다 성능 좋음
@@ -42,12 +44,11 @@
  ** Set, Map은 배열 객체보다 드물게 사용
  */
 
-let person = { name: "Max" };
 const persons = new WeakSet(); // 숫자나 문자열은 저장 x
 persons.add(person);
 
 // ... some operations
-person = null;
+// person = null;
 
 console.log(persons);
 
@@ -56,3 +57,10 @@ console.log(persons);
  ** WeakSet() -> 객체를 지정해 놓은 모든 위치를 리셋했다면 더 이상 Set도 해당 객체를 저장해 두지 않고 삭제
  ** WeakSet은 가비지 컬렉션으로 Set에 포함되어 있는 항목을 직접 삭제. 더 이상 코드 일부로 남지않음
  */
+
+const personData = new WeakMap();
+personData.set(person, "Extra info!");
+
+person = null;
+
+console.log(personData);
