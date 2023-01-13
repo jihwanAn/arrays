@@ -113,8 +113,19 @@ const sortedPrices = prices.sort((a, b) => {
 console.log(sortedPrices);
 
 //filter(), 가격이 6보다 큰
-const filteredArray = prices.filter((price, index, prices) => {
-  return 6 < price;
-});
+const filteredArray = prices.filter((price) => 6 < price);
 
 console.log(filteredArray);
+
+// let sum = 0;
+// prices.forEach((price) => {
+//   sum += price;
+// });
+
+// console.log(sum);
+
+//배열의 값을 단일값으로 할때 유용
+const sum = prices.reduce((prevValue, curValue, curIndex, prices) => {
+  return prevValue + curValue;
+}, 0);
+console.log("sum", sum);
