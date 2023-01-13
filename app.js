@@ -111,3 +111,10 @@ const sortedPrices = prices.sort((a, b) => {
 });
 // console.log(sortedPrices.reverse());
 console.log(sortedPrices);
+
+//filter(), 가격이 6보다 큰
+const filteredArray = prices.filter((price, index, prices) => {
+  return 6 < price;
+});
+
+console.log(filteredArray);
